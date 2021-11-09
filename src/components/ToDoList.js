@@ -2,6 +2,11 @@ import React from "react";
 
 function ToDoList({ todos, setToDos }) {
 
+{
+    /*
+    When a checkbox is clicked, onChecked function looks todos list and maps checked items' completed property to its opposite by looking if id's are the same
+    */
+}
   const onChecked = (id) => {
     const newToDoListFromCheckedCompleted = todos.map(item => {
         if (item.id === id) {
@@ -12,6 +17,7 @@ function ToDoList({ todos, setToDos }) {
             return item;
         }
     });
+    {/* Creates new todo list from changed checked state */}
     setToDos(newToDoListFromCheckedCompleted);
   }
 
