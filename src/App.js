@@ -9,18 +9,18 @@ function App() {
   }
   const initialValues = [
     {
-      id: "",
-      title: "Deneme 1",
+      id: "1",
+      title: "Learn Javascript",
       completed: false,
     },
     {
-      id: "",
-      title: "Deneme 2",
+      id: "2",
+      title: "Read book",
       completed: true,
     },
     {
-      id: "",
-      title: "Deneme 3",
+      id: "3",
+      title: "Travel",
       completed: false,
     },
   ];
@@ -40,7 +40,7 @@ function App() {
       <Header toDoValues={todos} toDoSet={setToDos} />
 
       {/* Sending todo List to Content. After content, it will be sent to ToDolist component to display todos in a list */}
-      <Content toDoList={todos} filter={filter} setFilter={setFilter} />
+      <Content toDoList={todos} setToDos={setToDos} filter={filter} setFilter={setFilter} />
 
       <footer className="info">
         <p>Created by Sezer Alagöz</p>

@@ -2,12 +2,11 @@ import { nanoid } from "nanoid";
 import React from "react";
 import { useState } from "react";
 
-{
-  /* initial value is the empty state the form field as an object reflecting the todo object from App.js */
-}
-const initialValue = { id: nanoid(), title: "", completed: false };
-
 function Header({ toDoValues, toDoSet }) {
+  {
+    /* initial value is the empty state the form field as an object reflecting the todo object from App.js */
+  }
+  const initialValue = { id: nanoid(), title: "", completed: false };
   {
     /* Setting form field to its initial state */
   }
