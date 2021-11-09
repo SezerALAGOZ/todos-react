@@ -30,6 +30,9 @@ function App() {
   }
   const [todos, setToDos] = useState(initialValues);
 
+  {/* Sending filter for links all, active and complted in footer */}
+  const [filter, setFilter] = useState("all");
+
   return (
     <section className="todoapp">
 
@@ -37,7 +40,7 @@ function App() {
       <Header toDoValues={todos} toDoSet={setToDos} />
 
       {/* Sending todo List to Content. After content, it will be sent to ToDolist component to display todos in a list */}
-      <Content toDoList={todos} />
+      <Content toDoList={todos} filter={filter} setFilter={setFilter} />
 
       <footer className="info">
         <p>Created by Sezer Alagöz</p>

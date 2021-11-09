@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Footer() {
+function Footer({filter, setFilter}) {
     return (
         <div>
             <footer className="footer">
@@ -10,15 +10,16 @@ function Footer() {
                 items left
             </span>
 
+            {/* When all, active, completed links are clicked, their styles will be rendered accordingly */}
             <ul className="filters">
                 <li>
-                    <a className="selected">All</a>
+                    <a className={filter === 'all' ? 'selected': ''} onClick={() => setFilter('all')}>All</a>
                 </li>
                 <li>
-                    <a>Active</a>
+                    <a className={filter === 'active' ? 'selected': ''} onClick={() => setFilter('active')}>Active</a>
                 </li>
                 <li>
-                    <a>Completed</a>
+                    <a className={filter === 'completed' ? 'selected': ''} onClick={() => setFilter('completed')}>Completed</a>
                 </li>
             </ul>
 
