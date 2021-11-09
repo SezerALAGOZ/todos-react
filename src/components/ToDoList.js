@@ -21,6 +21,15 @@ function ToDoList({ todos, setToDos }) {
     setToDos(newToDoListFromCheckedCompleted);
   }
 
+
+  {/* Destroy buttons deletes items from list */}
+  const destroy = (id) => {
+    const destroyed = todos.filter(item => {
+        return item.id !== id;
+    })
+    setToDos(destroyed);
+  }
+
   return (
     <div>
       <section className="main">
@@ -36,7 +45,10 @@ function ToDoList({ todos, setToDos }) {
                 onClick={() => onChecked(item.id)}
                 />
                 <label>{item.title}</label>
-                <button className="destroy"></button>
+                <button 
+                className="destroy"
+                onClick={() => destroy(item.id)}>                   
+                </button>
               </div>
             </li>
           ))}

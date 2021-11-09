@@ -1,6 +1,14 @@
 import React from 'react'
 
-function Footer({filter, setFilter}) {
+function Footer({filter, setFilter, todos, setToDos}) {
+
+    const clearCompleted = () => {
+        const cleared = todos.filter(item => {
+            return item.completed === false;
+        });
+        setToDos(cleared);
+    }
+
     return (
         <div>
             <footer className="footer">
@@ -23,7 +31,9 @@ function Footer({filter, setFilter}) {
                 </li>
             </ul>
 
-            <button className="clear-completed">
+            <button 
+            onClick={clearCompleted}
+            className="clear-completed">
                 Clear completed
             </button>
             </footer>

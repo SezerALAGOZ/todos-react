@@ -1,7 +1,7 @@
 import "./App.css";
 import Content from "./components/Content";
 import Header from "./components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   {
@@ -33,6 +33,30 @@ function App() {
   {/* Sending filter for links all, active and complted in footer */}
   const [filter, setFilter] = useState("all");
 
+
+  {/* Filtering todos into a new list by looking at complete-active-all state by using useEffect */}
+  const [filteredToDoList, setFilteredToDoList] = useState([]);
+  
+  useEffect(() => {
+    if(filter === "all") {
+     setFilteredToDoList(todos);
+    }
+    else if(filter === "active") {
+      const newList = todos.filter((item) => {
+        return item.completed === false;
+    });
+    setFilteredToDoList(newList);
+    }
+    else if(filter === "completed") {
+      const newList = todos.filter((item) => {
+        return item.completed === true;
+    });
+    setFilteredToDoList(newList);
+    }
+  }, [filteredToDoList, todos]);
+
+
+
   return (
     <section className="todoapp">
 
@@ -40,7 +64,7 @@ function App() {
       <Header toDoValues={todos} toDoSet={setToDos} />
 
       {/* Sending todo List to Content. After content, it will be sent to ToDolist component to display todos in a list */}
-      <Content toDoList={todos} setToDos={setToDos} filter={filter} setFilter={setFilter} />
+      <Content toDoList={filteredToDoList} setToDos={setToDos} filter={filter} setFilter={setFilter} />
 
       <footer className="info">
         <p>Created by Sezer Alagöz</p>

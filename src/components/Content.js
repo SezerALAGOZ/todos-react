@@ -8,7 +8,7 @@ function Content({ toDoList, filter, setFilter, setToDos }) {
      
       {/* Sending todo List to ToDolist component to display todos in a list */}
       <ToDoList todos={toDoList} setToDos={setToDos} />
-      <Footer filter={filter} setFilter={setFilter}/>
+      <Footer filter={filter} setFilter={setFilter} todos={toDoList} setToDos={setToDos}/>
     </div>
   );
 }
