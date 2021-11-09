@@ -1,36 +1,22 @@
 import React from 'react'
 
-function ToDoList() {
+function ToDoList({todos}) {
     return (
         <div>
-            <section class="main">
-                <input class="toggle-all" type="checkbox" />
-                <label for="toggle-all">
-                    Mark all as complete
-                </label>
+            <section className="main">
+                <ul className="todo-list">
 
-                <ul class="todo-list">
-                    <li class="completed">
-                        <div class="view">
-                            <input class="toggle" type="checkbox" />
-                            <label>Learn JavaScript</label>
-                            <button class="destroy"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="view">
-                            <input class="toggle" type="checkbox" />
-                            <label>Learn React</label>
-                            <button class="destroy"></button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="view">
-                            <input class="toggle" type="checkbox" />
-                            <label>Have a life!</label>
-                            <button class="destroy"></button>
-                        </div>
-                    </li>
+                    {
+                        todos.map((item, index) => (
+                            <li key={index} className={item.completed}>
+                                <div className="view">
+                                    <input className="toggle" type="checkbox" />
+                                    <label>{item.title}</label>
+                                    <button className="destroy"></button>
+                                </div>
+                            </li>
+                        ))
+                    }
                 </ul>
             </section>
         </div>
