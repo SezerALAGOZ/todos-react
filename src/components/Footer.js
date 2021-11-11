@@ -21,13 +21,13 @@ function Footer({filter, setFilter, todos, setToDos}) {
             {/* When all, active, completed links are clicked, their styles will be rendered accordingly */}
             <ul className="filters">
                 <li>
-                    <a className={filter === 'all' ? 'selected': ''} onClick={() => setFilter('all')}>All</a>
+                    <button className={filter === 'all' ? 'selected': ''} onClick={() => setFilter('all')}>All</button>
                 </li>
                 <li>
-                    <a className={filter === 'active' ? 'selected': ''} onClick={() => setFilter('active')}>Active</a>
+                    <button className={filter === 'active' ? 'selected': ''} onClick={() => setFilter('active')}>Active</button>
                 </li>
                 <li>
-                    <a className={filter === 'completed' ? 'selected': ''} onClick={() => setFilter('completed')}>Completed</a>
+                    <button className={filter === 'completed' ? 'selected': ''} onClick={() => setFilter('completed')}>Completed</button>
                 </li>
             </ul>
 
