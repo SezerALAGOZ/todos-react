@@ -3,25 +3,20 @@ import React from "react";
 import { useState } from "react";
 
 function Header({ toDoValues, toDoSet }) {
-  {
+  
     /* initial value is the empty state the form field as an object reflecting the todo object from App.js */
-  }
   const initialValue = { id: nanoid(), title: "", completed: false };
-  {
+  
     /* Setting form field to its initial state */
-  }
   const [form, setForm] = useState(initialValue);
 
-  {
+
     /* On input change, updating form as an object only replacing the title property */
-  }
   const inputChanged = (event) => {
     setForm({ ...form, title: event.target.value });
   };
 
-  {
-    /* On submit, adding new todo object from form field to the list of todos. This updates todo list. Then setting form field to its initial state */
-  }
+ /* On submit, adding new todo object from form field to the list of todos. This updates todo list. Then setting form field to its initial state */
   const onSubmit = (event) => {
     event.preventDefault();
     if (form.title === "") {
